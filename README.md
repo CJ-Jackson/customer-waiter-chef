@@ -13,7 +13,7 @@ $ go run cmd/chef/main.go 127.0.0.1:1450
 $ go run cmd/waiter/main.go 127.0.0.1:1450
 ```
 
-That finally run the command.
+Than finally run the command.
 
 ```sh
 $ go run cmd/customer/main.go 127.0.0.1:1450
