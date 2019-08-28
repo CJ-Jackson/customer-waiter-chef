@@ -3,19 +3,26 @@ package main
 import (
 	"fmt"
 	"log"
+	"os"
 	"sync"
 
 	nsq "github.com/bitly/go-nsq"
 )
 
 func main() {
+	if len(os.Args) < 2 {
+		log.Fatal("Requires One Argument")
+	}
+
+	serviceAddress := os.Args[1]
+
 	fmt.Println("Running Waiter")
 
 	wg := &sync.WaitGroup{}
 	wg.Add(1)
 
 	config := nsq.NewConfig()
-	w, _ := nsq.NewProducer("cjserver.lan:4150", config)
+	w, _ := nsq.NewProducer(serviceAddress, config)
 
 	q, _ := nsq.NewConsumer("customer_to_waiter", "ch", config)
 	q.AddHandler(nsq.HandlerFunc(func(message *nsq.Message) error {
@@ -31,12 +38,12 @@ func main() {
 		return nil
 	}))
 
-	err := q.ConnectToNSQD("cjserver.lan:4150")
+	err := q.ConnectToNSQD(serviceAddress)
 	if err != nil {
 		log.Panic("Could not connect")
 	}
 
-	err = chefQ.ConnectToNSQD("cjserver.lan:4150")
+	err = chefQ.ConnectToNSQD(serviceAddress)
 	if err != nil {
 		log.Panic("Could not connect")
 	}
