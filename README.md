@@ -18,3 +18,7 @@ Than finally run the command.
 ```sh
 $ go run cmd/customer/main.go 127.0.0.1:1450
 ```
+
+# Blog Post
+
+https://www.cj-jackson.com/blogentry/26-experiment-with-microservice-and-message-bus-nsq
