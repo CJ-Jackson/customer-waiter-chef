@@ -1,0 +1,14 @@
+syntax = "proto3";
+package protocol;
+
+service Chef {
+    rpc OrderFromWaiter(WaiterRequest) returns (ChefReply) {}
+}
+
+message WaiterRequest {
+    string request = 1;
+}
+
+message ChefReply {
+    string message = 1;
+}

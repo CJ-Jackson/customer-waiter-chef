@@ -1,0 +1,14 @@
+syntax = "proto3";
+package protocol;
+
+service Waiter {
+    rpc OrderFromCustomer(CustomerRequest) returns (WaiterReply) {}
+}
+
+message CustomerRequest {
+    string request = 1;
+}
+
+message WaiterReply {
+    string message = 1;
+}
