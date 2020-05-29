@@ -1,4 +1,4 @@
-module customer-waiter-chef
+module github.com/CJ-Jackson/customer-waiter-chef
 
 go 1.12
 

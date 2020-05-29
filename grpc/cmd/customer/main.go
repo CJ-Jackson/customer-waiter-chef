@@ -2,11 +2,11 @@ package main
 
 import (
 	"context"
-	"customer-waiter-chef/gprc/protocol"
 	"fmt"
 	"log"
 	"os"
 
+	"github.com/CJ-Jackson/customer-waiter-chef/grpc/protocol"
 	"google.golang.org/grpc"
 )
 

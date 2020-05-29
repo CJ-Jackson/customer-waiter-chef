@@ -2,6 +2,12 @@
 
 A little experiment with microservices and message bus (NSQ)
 
+# Update
+
+There also another version of the experiment, only this time I used gRPC.
+
+https://github.com/CJ-Jackson/customer-waiter-chef/tree/master/grpc
+
 # Usage
 
 Make sure that NSQ is running somewhere.
